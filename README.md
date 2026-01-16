@@ -95,8 +95,8 @@ function include(filename) {
 
 ## 🚨 Important Caveat
 
->[!ALERT]
->This project uncovered a critical Google App Script issue worth commenting.
+> [!CAUTION]
+> This project uncovered a critical Google App Script issue worth commenting.
 
 ### ❌ Error
 
