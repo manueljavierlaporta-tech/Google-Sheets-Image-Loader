@@ -4,6 +4,14 @@ This project contains a **Google Apps Script** exntension for **Google Sheets**,
 
 The solution uses a custom HTML modal to collect data and a backend App Script function to insert rows programmatically.
 
+## ⚙️ Tech Stack
+
+![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?style=flat&logo=googlesheets&logoColor=white)
+![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=flat&logo=google&logoColor=white)
+![HTML Service](https://img.shields.io/badge/HTML%20Service-E34F26?style=flat&logo=html5&logoColor=white)
+![Vanilla JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
+
 ## ✍🏻 Workflow
 
 <div>
