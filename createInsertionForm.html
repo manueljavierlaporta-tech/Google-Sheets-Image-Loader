@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= include('Style'); ?>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-container">
+        <img src="https://drive.google.com/thumbnail?id=1en0LMkw5Xw9eAC2jyOLjV4rTtRqWW_kw">
+        <h1>DATA ENTRY</h1>
+      </div>
+      <div class="quantity-rows-container">
+        <h2>Enter the number of images to upload:</h2>
+        <input id="row-count" type="number" name="quantity" min="1">
+      </div>
+      <div id="form-container" class="form-container">
+        
+      </div>
+      <div class="save-btn-container">
+        <input id="save-btn" type="button" value="CARGAR">
+      </div>
+    </div>
+    
+    
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const input = document.getElementById('row-count');
+      const sendBtn = document.getElementById('save-btn');
+
+      // Add & Remove Inputs/Labels
+      input.addEventListener('change', function (e) { 
+        let inputValue = parseInt(e.target.value);
+
+        addRemoveRows(inputValue);
+      });
+
+      // Add Rows with Data
+      sendBtn.addEventListener('click', function (e) {
+        addData();
+      });
+
+     // Add/Remove label & input rows
+      function addRemoveRows(inputValue) {
+        let aboutValuesArray = [];
+        let urlValuesArray = [];
+        const firstArray = ["Enter email subjecT:", "Enter the URL of the Shutterstock image preview:"];
+        const secondArray = ["subject", "url"];
+        const formContainer = document.getElementById('form-container');
+
+        // Set values to none
+        aboutValuesArray = [];
+        urlValuesArray = [];
+
+        formContainer.innerHTML = '';
+
+        let rowDiv = document.createElement('div');
+        rowDiv.classList.add('row-div-container');
+
+        for(let i = 0; i < inputValue; i++){
+          let littleDiv = document.createElement('div');
+          littleDiv.classList.add('little-div-container');
+
+          let rowTitleDiv = document.createElement('div');
+          rowTitleDiv.classList.add('title-div-container');
+
+          let rowTitle = document.createElement('h3');
+          rowTitle.textContent = `Image no. ${i+1}`;
+
+          rowTitleDiv.appendChild(rowTitle);
+          littleDiv.appendChild(rowTitleDiv);
+
+          for(let j = 0; j < 2; j++){
+            let lableInputDiv = document.createElement('div');
+            lableInputDiv.classList.add('label-input-div');
+
+            let rowLabel = document.createElement('label');
+            let rowInput = document.createElement('input');
+
+            rowLabel.textContent = firstArray[j];
+            rowLabel.htmlFor = secondArray[j];
+            rowInput.classList.add(secondArray[j]);
+
+            lableInputDiv.appendChild(rowLabel);
+            lableInputDiv.appendChild(rowInput);
+            littleDiv.appendChild(lableInputDiv);
+          }
+          
+          rowDiv.appendChild(littleDiv);
+          formContainer.appendChild(rowDiv);
+        }
+      }
+
+      function addData() {
+        let aboutValuesArray = [];
+        let urlValuesArray = [];
+
+        // Set values to none
+        aboutValuesArray = [];
+        urlValuesArray = [];
+
+        // Input number value
+        let inputValue = parseInt(input.value);
+        // About array input values
+        let aboutValues = document.getElementsByClassName('subject');
+        // URL array values
+        let urlValues = document.getElementsByClassName('url');
+
+        for(let i=0; i < inputValue; i++){
+          aboutValuesArray.push(aboutValues[i].value);
+          urlValuesArray.push(urlValues[i].value);
+        }
+
+        // Finding Shutter image code from URL
+        for(let k=0; k < urlValuesArray.length; k++){
+          let shutterstockCode = urlValuesArray[k].split("/")[5];
+          let today = `${ new Date().getDate() }/${ parseInt( new Date().getMonth() ) + 1 }/${ new Date().getFullYear() }`;
+          let about = aboutValuesArray[k] || "";
+          let internalCode = about.includes("BM") ? about.split(" ")[0] : "";
+          let fullUrl = `=image("${urlValuesArray[k]}")`;
+
+          let allValuesArray = [
+            shutterstockCode,
+            today,
+            about,
+            internalCode,
+            fullUrl
+          ];
+            
+          google.script.run.newRow(allValuesArray);
+        };
+      }
+    });
+  </script>
+</html>
