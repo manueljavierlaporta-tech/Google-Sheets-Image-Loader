@@ -1,1 +1,27 @@
-# Google-Sheets-Image-Loader
+# 🖼️ Google Sheets | Image Loader
+
+This project contains a **Google Apps Script** exntension for **Google Sheets**, designed to load external images (in this particular case, is specific for a type of Shutterstock URLs) into a spreadsheet while preserving metadata and binding the image to a specific row, using native Google Sheets formulas and, of course, Google App Scripts (so, JavaScript).  
+
+The solution uses a custom HTML modal to collect data and a backend App Script function to insert rows programmatically.
+
+## ✍🏻 Workflow
+
+<div>
+  <p> This scriptr was created to support the registration of Shutterstock photo purchases for an <b>advertising agency</b>. The creative assets (especially the image code and preview) need to be easily trackable (hello Ctrl+F), and the agency needs to be able to preview the image to decide which one to use.<br>
+The process works as follows: </p>
+  <ol>
+    <li> A user opens a custom menu inside Google Sheets. </li>
+    <li> A modal dialog (HTML + CSS + JavaScript) is displayed. </li>
+    <li> The user pastes one or more image URLs (e.g. Shutterstock links) and related descriptive data. </li>
+    <li> The script extracts:
+      <ul>
+        <li> Image ID </li>
+        <li> Insertion date </li>
+        <li> Description / notes </li>
+        <li> Internal reference code (if present) </li>
+        <li> Image formula bound to a specific cell </li>
+      </ul>
+    </li>
+    <li> A new row is appended for each image using Apps Script. </li>
+  </ol>
+</div>
