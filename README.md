@@ -38,3 +38,5 @@ The backend App Script must:
     <li> Append the data as a new row in the active sheet. </li>
   </ol>
 </div>
+
+The HTML dialog sends data to AppScript using <p><code>google.script.run</code></p>
