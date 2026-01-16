@@ -39,4 +39,4 @@ The backend App Script must:
   </ol>
 </div>
 
-The HTML dialog sends data to AppScript using <p><code>google.script.run</code></p>
+<p> The HTML dialog sends data to AppScript using <code>google.script.run</code>.</p>
