@@ -25,3 +25,16 @@ The process works as follows: </p>
     <li> A new row is appended for each image using Apps Script. </li>
   </ol>
 </div>
+
+## 🎯 Script Objective
+
+The backend App Script must:  
+<div>
+  <ol>
+    <li> Receive structured data from an HTML dialog. </li>
+    <li> Process multiple URLs in a single submission. </li>
+    <li> Extract identifiers from each URL. </li>
+    <li> Generate a valid <code>=IMAGE()</code> formula. </li>
+    <li> Append the data as a new row in the active sheet. </li>
+  </ol>
+</div>
