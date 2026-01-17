@@ -101,6 +101,8 @@ function include(filename) {
 }
 ```
 
+<p> Normally, in the <code>showScreen()</code> function, you wouldn't use the <b>HtmlService method</b> <code>createTemplateFromFile()</code>, but rather <code>createHtmlOutputFromFile()</code>. However, in this case, <code>createTemplateFromFile()</code> is required to make your CSS (which is actually another .html file) work, since it's being imported. </p>
+
 ## 🚨 Important Caveat
 
 > [!CAUTION]
