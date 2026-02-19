@@ -72,7 +72,7 @@ for(let k=0; k < urlValuesArray.length; k++){
 
 <p> The backend simply appends the row: </p>
 
-```
+```javascript
 function newRow(allValuesArray){
   SpreadsheetApp.getActiveSheet().appendRow(allValuesArray);
 }
@@ -82,7 +82,7 @@ function newRow(allValuesArray){
 
 <p> The custom modal is injected using: </p>
 
-```
+```javascript
 function showScreen() {
   var template = HtmlService.createTemplateFromFile("createInsertionForm");
   var html = template.evaluate()
@@ -95,7 +95,7 @@ function showScreen() {
 ```
 <p> And the CSS and JavaScript are modularized using an <code>include()</code> helper: </p>
 
-```
+```javascript
 function include(filename) {
   return HtmlService.createHtmlOutputFromFile(filename).getContent();
 }
