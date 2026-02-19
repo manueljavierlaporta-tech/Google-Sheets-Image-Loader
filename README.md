@@ -50,7 +50,7 @@ The backend App Script must:
 <p> The HTML dialog sends data to AppScript using <code>google.script.run</code>.<br>
 Each image URL is processed and converted into a row:</p>
 
-```
+```javascript
 for(let k=0; k < urlValuesArray.length; k++){
   let shutterstockCode = urlValuesArray[k].split("/")[5];
   let today = `${ new Date().getDate() }/${ parseInt( new Date().getMonth() ) + 1 }/${ new Date().getFullYear() }`;
