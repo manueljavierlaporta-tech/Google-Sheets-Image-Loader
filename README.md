@@ -1,6 +1,6 @@
 # 🖼️ Google Sheets | Image Loader
 
-This project contains a **Google Apps Script** exntension for **Google Sheets**, designed to load external images (in this particular case, is specific for a type of Shutterstock URLs) into a spreadsheet while preserving metadata and binding the image to a specific row, using native Google Sheets formulas and, of course, Google App Scripts (so, JavaScript).  
+This project contains a **Google Apps Script** extension for **Google Sheets**, designed to load external images (in this particular case, is specific for a type of Shutterstock URLs) into a spreadsheet while preserving metadata and binding the image to a specific row, using native Google Sheets formulas and, of course, Google App Scripts (so, JavaScript).  
 
 The solution uses a custom HTML modal to collect data and a backend App Script function to insert rows programmatically.
 
