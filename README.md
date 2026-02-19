@@ -15,7 +15,7 @@ The solution uses a custom HTML modal to collect data and a backend App Script f
 ## ✍🏻 Workflow
 
 <div>
-  <p> This scriptr was created to support the registration of Shutterstock photo purchases for an <b>advertising agency</b>. The creative assets (especially the image code and preview) need to be easily trackable (hello Ctrl+F), and the agency needs to be able to preview the image to decide which one to use.<br>
+  <p> This script was created to support the registration of Shutterstock photo purchases for an <b>advertising agency</b>. The creative assets (especially the image code and preview) need to be easily trackable (hello Ctrl+F), and the agency needs to be able to preview the image to decide which one to use.<br>
 The process works as follows: </p>
   <ol>
     <li> A user opens a custom menu inside Google Sheets. </li>
